@@ -12,7 +12,7 @@ pipeline {
                 sh "mvn compile"
             }
         }
-        stage("test"){
+        stage("test+all"){
             steps{
                 echo "project code review"
                 echo "project test coverage analysis package"
