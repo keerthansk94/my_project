@@ -12,6 +12,17 @@ pipeline {
                 sh "mvn compile"
             }
         }
+        stage('UnitTest') { 
+          agent any
+            steps {
+                echo "Test the code"
+                sh "mvn test"
+            }
+            post{
+                always{
+                     junit 'target/surefire-reports/*.xml'
+                }
+            }
         stage("test"){
             steps{
                 echo "project code review"
