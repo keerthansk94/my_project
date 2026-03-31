@@ -23,6 +23,7 @@ pipeline {
                      junit 'target/surefire-reports/*.xml'
                 }
             }
+        }
         stage("test"){
             steps{
                 echo "project code review"
