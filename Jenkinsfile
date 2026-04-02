@@ -33,8 +33,8 @@ pipeline {
         }
         stage("build a docker image and run the container"){
             steps{
-                sh "chmod +x var/jenkins_home/workspace/my_project-pipeline/script.sh && var/jenkins_home/workspace/my_project-pipeline/script.sh"
-                sh "docker build -t app:v1 /var/jenkins_home/workspace/my_project-pipeline/dockerfile"
+                sh "chmod +x script.sh && ./script.sh"
+                sh "docker build -t app:v1 ."
                 sh "docker run -itd --name app_run -P app:v1"
             }
         }
