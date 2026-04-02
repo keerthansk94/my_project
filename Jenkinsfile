@@ -33,7 +33,7 @@ pipeline {
         }
         stage("build a docker image and run the container"){
             steps{
-                sh "chmod +x script.sh && ./script.sh"
+                sh "chmod +x script.sh && bash script.sh"
                 sh "docker build -t app:v1 ."
                 sh "docker run -itd --name app_run -P app:v1"
             }
