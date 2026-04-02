@@ -32,6 +32,9 @@ pipeline {
             }
         }
         stage("build a docker image and run the container"){
+            agent {
+                label = "linux_node"
+            }
             steps{
                 sh "docker build -t app:v1 /var/jenkins_home/workspace/my_project-pipeline/dockerfile"
                 sh "docker run -itd --name app_run -P app:v1"
