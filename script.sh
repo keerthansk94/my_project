@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sudo apt update -y
-sudo apt install docker -y
-sudo systemctl start docker
-sudo apt install git
+apt update -y
+apt install docker -y
+systemctl start docker
+apt install git
